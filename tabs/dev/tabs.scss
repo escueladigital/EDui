@@ -1,0 +1,36 @@
+.edui-tabs {
+
+  .tabs {
+    display : flex;
+    position : relative;
+    top : 1px;
+  }
+
+  .tab {
+    border : 1px solid #ccc;
+    padding : .5em 1em;
+    border-radius : 5px 5px 0 0;
+    margin-right : -1px;
+    background : #f5f5f5;
+    cursor: pointer;
+
+    &.active {
+      background : #fff;
+      border-bottom : 1px solid #fff;
+    }
+  }
+
+  .panels {
+
+  }
+
+  .panel {
+    display : none;
+    border : 1px solid #ccc;
+    padding : 1em;
+
+    &.active {
+      display : block;
+    }
+  }
+}

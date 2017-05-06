@@ -1,0 +1,22 @@
+.edui-tabs .tabs {
+  display: flex;
+  position: relative;
+  top: 1px; }
+
+.edui-tabs .tab {
+  border: 1px solid #ccc;
+  padding: .5em 1em;
+  border-radius: 5px 5px 0 0;
+  margin-right: -1px;
+  background: #f5f5f5;
+  cursor: pointer; }
+  .edui-tabs .tab.active {
+    background: #fff;
+    border-bottom: 1px solid #fff; }
+
+.edui-tabs .panel {
+  display: none;
+  border: 1px solid #ccc;
+  padding: 1em; }
+  .edui-tabs .panel.active {
+    display: block; }
