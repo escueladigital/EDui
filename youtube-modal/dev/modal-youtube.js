@@ -1,11 +1,9 @@
 // Obtener el código del video y los parámetros adicionales
-const getYoutTubeVideoCode = url => {
-  let inicio = url.indexOf('?') + 3,
-    final = url.indexOf('&',inicio),
-    code = final === -1 ? url.slice(inicio) : url.slice(inicio,final),
-    params = url.slice(final + 1);
-  return final === -1 ? `${code}?` : `${code}?${params}&`;
-};
+const getYoutubeVideoCode = url =>
+  /(\&)/.test(url)                //verifica si tiene o no parametros.
+  ? `${/(?:v=)(.+)/.exec(url)[1]}&`  //con parametros
+  : `${/(?:v=)(\w+)/.exec(url)[1]}?` //sin parametros
+
 
 // Dibujar el modal
 const printYouTubeModal = youTubeVideoCode => {
@@ -41,7 +39,7 @@ const openYouTubeModal = selector => {
   linksElements.forEach((el,i) => {
     el.addEventListener('click', e => {
       e.preventDefault();
-      printYouTubeModal(getYoutTubeVideoCode(links[i]))
+      printYouTubeModal(getYoutubeVideoCode(links[i]))
     })
   })
 };
