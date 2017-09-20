@@ -1,7 +1,7 @@
 // Crear elementos con atributos e hijo
 const createCustomElement = (element,attributes,child) => {
   let customElement = document.createElement(element);
-  if (child !== null) {
+  if (child !== null && child !== undefined) {
     child.nodeType === 1 || child.nodeType === 11 ? customElement.appendChild(child) : customElement.innerHTML = child;
   }
   addAttributes(customElement,attributes);
@@ -17,16 +17,14 @@ const addAttributes = (element, attrObj) => {
 
 // Envolver un elemento con otro
 const wrap = (selector, wrapElementType, attributesObj) => {
-  const element = document.querySelector(selector);
-  if (element) {
-    const nextSibling = element.nextElementSibling,
-      parent = element.parentElement,
-      wrapElement = createCustomElement(wrapElementType,attributesObj,element);
+  const element = getElement(selector),
+        nextSibling = element.nextElementSibling,
+        parent = element.parentElement,
+        wrapElement = createCustomElement(wrapElementType,attributesObj,element);
 
-    nextSibling
-      ? parent.insertBefore(wrapElement,nextSibling)
-      : parent.appendChild(wrapElement);
+  nextSibling
+    ? parent.insertBefore(wrapElement,nextSibling)
+    : parent.appendChild(wrapElement);
 
-    return wrapElement;
-  }
+  return wrapElement;
 };
