@@ -28,3 +28,20 @@ const wrap = (selector, wrapElementType, attributesObj) => {
 
   return wrapElement;
 };
+
+// Crear e imprimir modal
+const printModal = content => {
+  const modalContent = createCustomElement('div', {id: "ed-modal-content", class: "ed-modal-content"}, content),
+    modal = createCustomElement('div', {id: "ed-modal-container", class: "ed-modal-container"}, modalContent),
+    closeModal = createCustomElement('div', {id: "ed-close-modal", class: "ed-close-modal"});
+  // imprimir botón cerrar modal
+  modal.appendChild(closeModal);
+  // dibujar modal
+  document.body.appendChild(modal);
+  // cerrar modal
+  document.body.addEventListener('click', e => {
+    if (e.target.id === 'ed-close-modal') {
+      document.body.removeChild(modal);
+    }
+  })
+};
