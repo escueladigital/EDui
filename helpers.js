@@ -1,9 +1,13 @@
 // Crear elementos con atributos e hijo
-const createCustomElement = (element,attributes,child) => {
+const createCustomElement = (element,attributes,children) => {
   let customElement = document.createElement(element);
-  if (child !== null && child !== undefined) {
-    child.nodeType === 1 || child.nodeType === 11 ? customElement.appendChild(child) : customElement.innerHTML = child;
-  }
+  if (children !== undefined) children.forEach(el => {
+    if (el.nodeType) {
+      if (el.nodeType === 1 || el.nodeType === 11) customElement.appendChild(el);
+    } else {
+      customElement.innerHTML += el;
+    }
+  });
   addAttributes(customElement,attributes);
   return customElement;
 };
@@ -31,19 +35,13 @@ const wrap = (selector, wrapElementType, attributesObj) => {
 
 // Crear e imprimir modal
 const printModal = content => {
-  const modalContent = createCustomElement('div', {id: "ed-modal-content", class: "ed-modal-content"}, content),
-    modal = createCustomElement('div', {id: "ed-modal-container", class: "ed-modal-container"}, modalContent),
-    closeModal = createCustomElement('div', {id: "ed-close-modal", class: "ed-close-modal"});
-  // imprimir botón cerrar modal
-  modal.appendChild(closeModal);
+  const modalContent = createCustomElement('div', {id: "ed-modal-content", class: "ed-modal-content"}, [content]),
+          closeModal = createCustomElement('div', {id: "ed-close-modal", class: "ed-close-modal"}),
+               modal = createCustomElement('div', {id: "ed-modal-container", class: "ed-modal-container"}, [modalContent,closeModal]);
   // dibujar modal
   document.body.appendChild(modal);
   // cerrar modal
-  document.body.addEventListener('click', e => {
-    if (e.target.id === 'ed-close-modal') {
-      document.body.removeChild(modal);
-    }
-  })
+  closeModal.addEventListener('click', () => document.body.removeChild(modal) )
 };
 
 
