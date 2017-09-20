@@ -45,3 +45,17 @@ const printModal = content => {
     }
   })
 };
+
+
+// Retornar un elemento del DOM (revisar)
+const getElement = elementOrSelector => {
+  const el = elementOrSelector.nodeType === 1
+    ? elementOrSelector
+    : document.querySelector(elementOrSelector)
+      ? document.querySelector(elementOrSelector)
+      : false;
+  if (el === false) console.error('Function getElement() requires a DOM element or a valid selector');
+  return el
+};
+
+
