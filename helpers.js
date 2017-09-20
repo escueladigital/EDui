@@ -59,3 +59,23 @@ const getElement = elementOrSelector => {
 };
 
 
+// Media queries
+const mediaQuery = (breakpoint,cb) => {
+  const isChangeSize = mql => cb(mql.matches);
+  breakpoint.addListener(isChangeSize);
+  isChangeSize(breakpoint);
+};
+
+// From (EDgrid equivalent)
+// cb receive a boolean argument from mediaQuery() function
+const from = (breakpoint, cb) => {
+  const bp = window.matchMedia(`(min-width: ${breakpoint})`);
+  mediaQuery(bp,cb)
+};
+
+// To (EDgrid equivalent)
+// cb receive a boolean argument from mediaQuery() function
+const to = (breakpoint, cb) => {
+  const bp = window.matchMedia(`(max-width: ${breakpoint})`);
+  mediaQuery(bp,cb)
+};
