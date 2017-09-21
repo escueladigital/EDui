@@ -2,7 +2,7 @@ body {
   font-family : sans-serif;
 }
 
-.ed-modal {
+.ed-modal-container {
   position   : fixed;
   width      : 100%;
   height     : 100%;
@@ -12,7 +12,7 @@ body {
   display    : flex;
 }
 
-.ed-closeModal {
+.ed-close-modal {
   position : absolute;
   top      : 1em;
   right    : 1em;
@@ -44,7 +44,7 @@ body {
   }
 }
 
-.modalContent {
+.ed-modal-content {
   width     : 90%;
   max-width : 1000px;
   margin    : auto;
