@@ -9,30 +9,20 @@ body {
   top: 0;
   background: rgba(0, 0, 0, 0.9);
   display: flex; }
-
-.ed-close-modal {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  cursor: pointer;
-  width: 1.5rem;
-  height: 1.5rem;
-  opacity: .5; }
-  .ed-close-modal::before, .ed-close-modal::after {
+  .ed-modal-container::before, .ed-modal-container::after {
     content: "";
-    width: 2.12rem;
+    width: 2rem;
     height: 2px;
     background: #FFF;
     position: absolute;
-    top: 0;
+    top: 2rem;
     transform: rotate(45deg);
-    transform-origin: top left; }
-  .ed-close-modal::before {
-    left: 0; }
-  .ed-close-modal::after {
-    right: 0;
-    transform: rotate(-45deg);
-    transform-origin: top right; }
+    opacity: .6; }
+  .ed-modal-container::before {
+    right: 1rem; }
+  .ed-modal-container::after {
+    right: 1rem;
+    transform: rotate(-45deg); }
 
 .ed-modal-content {
   width: 90%;

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Crear elementos con atributos e hijo
 var createCustomElement = function createCustomElement(element, attributes, children) {
@@ -33,19 +33,6 @@ var wrap = function wrap(selector, wrapElementType, attributesObj) {
   return wrapElement;
 };
 
-// Crear e imprimir modal
-var printModal = function printModal(content) {
-  var modalContent = createCustomElement('div', { id: "ed-modal-content", class: "ed-modal-content" }, [content]),
-      closeModal = createCustomElement('div', { id: "ed-close-modal", class: "ed-close-modal" }),
-      modal = createCustomElement('div', { id: "ed-modal-container", class: "ed-modal-container" }, [modalContent, closeModal]);
-  // dibujar modal
-  document.body.appendChild(modal);
-  // cerrar modal
-  closeModal.addEventListener('click', function () {
-    return document.body.removeChild(modal);
-  });
-};
-
 // Retornar un elemento del DOM (revisar)
 var getElement = function getElement(elementOrSelector) {
   var el = elementOrSelector.nodeType === 1 ? elementOrSelector : document.querySelector(elementOrSelector) ? document.querySelector(elementOrSelector) : false;
@@ -65,13 +52,13 @@ var mediaQuery = function mediaQuery(breakpoint, cb) {
 // From (EDgrid equivalent)
 // cb receive a boolean argument from mediaQuery() function
 var from = function from(breakpoint, cb) {
-  var bp = window.matchMedia("(min-width: " + breakpoint + ")");
+  var bp = window.matchMedia('(min-width: ' + breakpoint + ')');
   mediaQuery(bp, cb);
 };
 
 // To (EDgrid equivalent)
 // cb receive a boolean argument from mediaQuery() function
 var to = function to(breakpoint, cb) {
-  var bp = window.matchMedia("(max-width: " + breakpoint + ")");
+  var bp = window.matchMedia('(max-width: ' + breakpoint + ')');
   mediaQuery(bp, cb);
 };

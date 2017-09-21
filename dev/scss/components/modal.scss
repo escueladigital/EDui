@@ -10,37 +10,26 @@ body {
   top        : 0;
   background : rgba(#000, .9);
   display    : flex;
-}
-
-.ed-close-modal {
-  position : absolute;
-  top      : 1em;
-  right    : 1em;
-  cursor   : pointer;
-  width    : 1.5rem;
-  height   : 1.5rem;
-  opacity  : .5;
 
   &::before,
   &::after {
     content          : "";
-    width            : 2.12rem;
+    width            : 2rem;
     height           : 2px;
     background       : #FFF;
     position         : absolute;
-    top              : 0;
+    top              : 2rem;
     transform        : rotate(45deg);
-    transform-origin : top left;
+    opacity          : .6;
   }
 
   &::before {
-    left : 0;
+    right : 1rem;
   }
 
   &::after {
-    right            : 0;
+    right            : 1rem;
     transform        : rotate(-45deg);
-    transform-origin : top right;
   }
 }
 
