@@ -9,14 +9,16 @@ En el primer commit se incluye
 * Lightbox
 * Sticky elements
 * Tabs
+* Funcion para crear cualquier ventana modal pasandole su contenido como parametro
 * Ventana modal de YouTube
+* Ventana modal de Vimeo
 
 En proceso:
 
+* Countdown
 * Menus
 * Botones
 * Slider
 * Tooltips
-* Countdown
 * Scrollspy menu
 * mas...
