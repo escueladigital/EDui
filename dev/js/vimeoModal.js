@@ -9,7 +9,6 @@ const getVimeoCode = url => url.slice('https://vimeo.com/'.length);
 const openVimeoModal = selector => {
   let linksElements = [...document.querySelectorAll(selector)],
     links = linksElements.map(link => link.href);
-    console.log(linksElements);
 
   linksElements.forEach((el,i) => {
     el.addEventListener('click', e => {

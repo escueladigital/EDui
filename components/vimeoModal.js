@@ -16,7 +16,6 @@ var openVimeoModal = function openVimeoModal(selector) {
       links = linksElements.map(function (link) {
     return link.href;
   });
-  console.log(linksElements);
 
   linksElements.forEach(function (el, i) {
     el.addEventListener('click', function (e) {

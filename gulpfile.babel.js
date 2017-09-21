@@ -29,6 +29,6 @@ gulp.task('default', () => {
     }
   });
   gulp.watch(['./*.html', './dev/*.js']).on('change',server.reload);
-  gulp.watch('./dev/js/*.js', ['scripts']);
+  gulp.watch('./dev/js/*.js', ['scripts']).on('change',server.reload);
   gulp.watch('./dev/**/**.scss', ['styles']);
 });

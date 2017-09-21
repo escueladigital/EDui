@@ -4,12 +4,26 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <link rel="stylesheet" href="components/ed-ui.css">
+  <style>
+    .alert {
+      background : #fff;
+      padding : 4em;
+    }
+  </style>
 </head>
 <body>
 <h1>Vimeo modal</h1>
 <a href="https://vimeo.com/146110769" class="vimeo-modal">Video</a>
+<a href="https://ed.team" id="modal-content">Modal de contenido</a>
 <script src="components/helpers.js"></script>
+<script src="components/modal.js"></script>
 <script src="components/vimeoModal.js"></script>
-<script>openVimeoModal('.vimeo-modal')</script>
+<script>
+  openVimeoModal('.vimeo-modal');
+  document.getElementById('modal-content').addEventListener('click', e => {
+    e.preventDefault();
+    printModal(`<div class="alert">Hola mundo, bienvenidos</div>`);
+  })
+</script>
 </body>
 </html>
