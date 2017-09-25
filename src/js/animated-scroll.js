@@ -39,5 +39,3 @@ const animatedScrollAllLinks = time => {
     animatedScrollEvent(link,time)
   }
 };
-
-animatedScrollAllLinks(200);

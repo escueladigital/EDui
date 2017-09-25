@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../dist/css/docs.css">
+  <link rel="stylesheet" href="../dist/css/components/modal.css">
+  <style>
+    .alert {
+      background : #fff;
+      padding : 4em;
+    }
+  </style>
+</head>
+<body>
+<h1>Modal</h1>
+<a href="https://ed.team" id="modal-content">Abrir modal de contenido</a>
+<script src="../dist//helpers.js"></script>
+<script src="../dist//modal.js"></script>
+<script>
+  document.getElementById('modal-content').addEventListener('click', e => {
+    e.preventDefault();
+    printModal(`<div class="alert">Hola mundo, bienvenidos</div>`);
+  })
+</script>
+</body>
+</html>

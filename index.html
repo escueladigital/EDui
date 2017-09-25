@@ -2,28 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="components/ed-ui.css">
-  <style>
-    .alert {
-      background : #fff;
-      padding : 4em;
-    }
-  </style>
+  <title>EDui - Inicio</title>
+  <link rel="stylesheet" href="components/docs.css">
 </head>
 <body>
-<h1>Vimeo modal</h1>
-<a href="https://vimeo.com/146110769" class="vimeo-modal">Video</a>
-<a href="https://ed.team" id="modal-content">Modal de contenido</a>
-<script src="components/helpers.js"></script>
-<script src="components/modal.js"></script>
-<script src="components/vimeoModal.js"></script>
-<script>
-  openVimeoModal('.vimeo-modal');
-  document.getElementById('modal-content').addEventListener('click', e => {
-    e.preventDefault();
-    printModal(`<div class="alert">Hola mundo, bienvenidos</div>`);
-  })
-</script>
+<h1>EDui - Documentación</h1>
+<p>Componentes:</p>
+<ol>
+  <li><a href="examples/animated-scroll.html">Scroll animado</a></li>
+  <li><a href="examples/lightbox.html">Lightbox</a></li>
+  <li><a href="examples/sticky-elements.html">Sticky elements</a></li>
+  <li><a href="examples/tabs.html">Tabs</a></li>
+  <li><a href="examples/modal.html">Funcion para crear cualquier ventana modal pasandole su contenido como parámetro</a>
+    <ul>
+      <li><a href="examples/modal-youtube.html">Ventana modal de YouTube</a></li>
+      <li><a href="examples/modal-vimeo.html">Ventana modal de Vimeo</a></li>
+    </ul>
+  </li>
+</ol>
+<p>Componentes en proceso:</p>
+<ul>
+  <li>Countdown</li>
+  <li>Menus</li>
+  <li>Botones</li>
+  <li>Slider</li>
+  <li>Tooltips</li>
+  <li>Scrollspy menu</li>
+  <li>Más...</li>
+</ul>
 </body>
 </html>

@@ -1,0 +1,24 @@
+.animated-scroll{
+  &__content,
+  &__menu {
+    width : 80%;
+    max-width : 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__menu {
+    display : flex;
+    list-style: none;
+    justify-content: center;
+    padding : 0;
+    li {
+      margin : 1em;
+    }
+  }
+
+  &__content {
+    padding-top : 4em;
+    line-height : 1.8;
+  }
+}
