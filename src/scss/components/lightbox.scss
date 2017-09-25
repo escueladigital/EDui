@@ -1,0 +1,68 @@
+.gallery {
+  width : 900px;
+  margin-left : auto;
+  margin-right : auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: .5em;
+  &__img {
+    display : block;
+    max-width : 100%;
+    cursor: pointer;
+  }
+}
+.ed-lightbox{
+  &__overlay {
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background : rgba(#000,.8);
+    display : flex;
+    z-index : 100;
+  }
+
+  &__container {
+    position : relative;
+    margin : auto;
+    background : #fff;
+    padding : 1em;
+    border-radius : .2em;
+  }
+
+  &__close {
+    $size: 1.8em;
+    background : tomato;
+    color: #fff;
+    position : absolute;
+    width : $size;
+    height : $size;
+    text-align : center;
+    line-height : $size;
+    top : - $size / 2;
+    right: - $size / 2;
+    border-radius : 50%;
+    cursor: pointer;
+  }
+
+  &__description {
+    text-align : center;
+    font-size : 1.1em;
+  }
+
+  &__navigation {
+    display : flex;
+    justify-content: space-between;
+    font-size : .9em;
+    opacity : .8;
+
+    &__button {
+      text-decoration : none;
+      color: tomato;
+    }
+  }
+}
+
+
+

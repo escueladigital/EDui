@@ -7,6 +7,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-postcss": "^6.4.0",
+    "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0"
   },
   "name": "EDui",
@@ -15,5 +16,8 @@
   "main": "index.js",
   "repository": "git@github.com:escueladigital/EDui.git",
   "author": "Alvaro Felipe <alvaro@ed.team>",
-  "license": "GPLv2"
+  "license": "GPLv2",
+  "scripts": {
+    "start": "gulp"
+  }
 }

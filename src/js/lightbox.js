@@ -26,29 +26,30 @@ const openLigthboxEvent = (container,gallery,larges,descriptions) => {
 const openLightbox = (gallery,i,larges,descriptions) => {
   let lightboxElement = document.createElement('div');
   lightboxElement.innerHTML = `
-    <div class="lightbox-overlay">
-      <figure class="lightbox-container">
-        <div class="close-modal">✖</div>
-        <img src="${larges[i]}" class="ligthbox-image">
+    <div class="ed-lightbox__overlay">
+      <figure class="ed-lightbox__container">
+        <div class="ed-lightbox__close">✖</div>
+        <img src="${larges[i]}" class="lightbox__image">
         <figcaption>
-          <p class="lightbox-description">${descriptions[i]}</p>
-          <nav class="lightbox-navigation">
-            <a href="#" class="lightbox-navigation__button prev">◀</a>
-            <span class="lightbox-navigation__counter">Imagen ${i + 1} de ${gallery.length}</span>
-            <a href="#" class="lightbox-navigation__button next">▶</a>
+          <p class="ed-lightbox__description">${descriptions[i]}</p>
+          <nav class="ed-lightbox__navigation">
+            <a href="#" class="ed-lightbox__navigation__button prev">◀</a>
+            <span class="ed-lightbox__navigation__counter">Imagen ${i + 1} de ${gallery.length}</span>
+            <a href="#" class="ed-lightbox__navigation__button next">▶</a>
           </nav>
         </figcaption>
       </figure>
     </div>
   `;
   lightboxElement.id = 'lightbox';
+  lightboxElement.class = 'ed-lightbox';
   document.body.appendChild(lightboxElement);
   closeModal(lightboxElement);
   navigateLightbox(lightboxElement,i,larges,descriptions);
 };
 
 const closeModal = modalElement => {
-  let closeModal = modalElement.querySelector('.close-modal');
+  let closeModal = modalElement.querySelector('.ed-lightbox__close');
   closeModal.addEventListener('click', e => {
     e.preventDefault();
     document.body.removeChild(modalElement);
@@ -61,7 +62,7 @@ const navigateLightbox = (lightboxElement,i,larges,descriptions) => {
     image = lightboxElement.querySelector('img'),
     description = lightboxElement.querySelector('p'),
     counter = lightboxElement.querySelector('span'),
-    closeButton = lightboxElement.querySelector('.close-modal');
+    closeButton = lightboxElement.querySelector('.ed-lightbox__close');
 
   window.addEventListener('keyup', e => {
     if (e.key === 'ArrowRight') nextButton.click();

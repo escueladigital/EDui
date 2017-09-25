@@ -1,0 +1,30 @@
+body {
+  font-family : sans-serif;
+  padding-top: 4rem;
+}
+h1 {
+  text-align : center;
+}
+.ed-nav{
+	width: 100%;
+	background: #eee;
+	top: 0;
+	left: 0;
+	position: fixed;
+	&__container{
+		display: flex;
+		padding: 1rem;
+	}
+	&__left{
+	}
+	&__right{
+		margin-left: auto;
+	}
+	&__item{
+		text-decoration: none;
+		color: #666;
+		&:hover{
+			color: #222;
+		}
+	}
+}

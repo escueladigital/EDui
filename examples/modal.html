@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+  <meta charset="UTF-8">
+  <title>EDui - Documentación</title>
+  <link rel="stylesheet" href="../dist/css/docs.css">
+  <link rel="stylesheet" href="../dist/css/components/modal.css">
+  <style>
+    .ed-modal-content{
+      background: white;
+      padding: 2rem;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="ed-nav">
+    <div class="ed-nav__container">
+      <div class="ed-nav__left"><a class="ed-nav__item" href="../index.html">« Regresar al inicio</a></div>
+      <div class="ed-nav__right"><a class="ed-nav__item" href="https://github.com/escueladigital/EDui">EDui en Github</a></div>
+    </div>
+  </div>
+  <h1>Modal</h1><a href="https://ed.team" id="modal-content">Abrir modal de contenido</a>
+  <script src="../dist/helpers.js"></script>
+  <script src="../dist/modal.js"></script>
+  <script>
+    document.getElementById('modal-content').addEventListener('click', e => {
+      e.preventDefault();
+      printModal(`<div class="alert">Hola mundo, bienvenidos</div>`);
+    })
+  </script>
+</body>

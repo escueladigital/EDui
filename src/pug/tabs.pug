@@ -1,0 +1,22 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/tabs.css")
+
+block content
+  h1 Tabs
+  .edui-tabs
+    .tabs
+      .tab Opción 1
+      .tab Opción 2
+      .tab Opción 3
+    .panels
+      - var n = 1;
+      while n <= 3
+        .panel
+          h2 opción #{n}
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+        - n++
+
+block scripts
+  script(src="../dist/tabs.js")
