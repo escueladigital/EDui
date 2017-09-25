@@ -6,7 +6,7 @@ const getDistanceTop = element => {
 const menu = document.getElementById('mainMenu');
 let menuDistanceTop;
 if (menu) menuDistanceTop = getDistanceTop(menu);
-alert(menuDistanceTop);
+console.log(menuDistanceTop);
 
 window.addEventListener('scroll', () => {
   let windowScroll = window.pageYOffset;

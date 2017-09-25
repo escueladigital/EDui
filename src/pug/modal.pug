@@ -1,0 +1,21 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/modal.css")
+  style.
+    .ed-modal-content{
+      background: white;
+      padding: 2rem;
+    }
+
+block content
+  h1 Modal
+  a(href="https://ed.team" id="modal-content") Abrir modal de contenido
+
+block scripts
+  script(src="../dist/modal.js")
+  script.
+    document.getElementById('modal-content').addEventListener('click', e => {
+      e.preventDefault();
+      printModal(`<div class="alert">Hola mundo, bienvenidos</div>`);
+    })

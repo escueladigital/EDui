@@ -1,0 +1,18 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/lightbox.css")
+
+block content
+  h1 Lightbox gallery
+  .gallery#gallery-container
+    - var n = 1;
+    while n <= 12
+      .gallery__item
+        img.gallery__img(src="../img/gallery-" + n + "-thumb.jpg" alt="Descripcion de la imagen " + n)
+      - n++
+
+block scripts
+  script(src="../dist/lightbox.js")
+  script.
+    lightbox(document.getElementById('gallery-container'));

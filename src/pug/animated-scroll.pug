@@ -1,0 +1,22 @@
+extends ./layout.pug
+
+block content
+  - var items = ["Introducción", "Capítulo 1", "Capítulo 2"]
+  - var slugs = ["intro", "cap1", "cap2"]
+  h1#top Animated scroll
+
+  ul.animated-scroll__menu#menu
+    each val, index in items
+      li: a(href="#" + slugs[index])= val
+  article.animated-scroll__content
+    each val, index in items
+      h2.article__subtitle(id=slugs[index])= val
+      a(href="#top") Subir
+      - var n = 0
+      while n < 3
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+        - n++
+block scripts
+  script(src="../dist/animated-scroll.js")
+  script.
+    animatedScrollAllLinks(200);

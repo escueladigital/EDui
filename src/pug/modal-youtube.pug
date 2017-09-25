@@ -1,0 +1,18 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/modal.css")
+
+block content
+  h1 YouTube modal
+  ul
+    li: a.modal-youtube(href="https://www.youtube.com/watch?v=_AEBmN0qOfM&t=30m23s") Taller sobre Adobe Xd
+    li: a.modal-youtube(href="https://www.youtube.com/watch?v=iwQaUs9nYWU") Taller de JavaScript Avanzado
+    li: a.modal-youtube(href="https://www.youtube.com/watch?v=d-1-2_DWehE") Taller de CSS Grid
+    li: a.modal-youtube(href="https://www.youtube.com/watch?v=C37ClwKUf7Q&t=1161s") PHP Avanzado con Laravel
+
+block scripts
+  script(src="../dist/modal.js")
+  script(src="../dist/youtubeModal.js")
+  script.
+    openYouTubeModal('.modal-youtube');

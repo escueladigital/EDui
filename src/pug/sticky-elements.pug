@@ -1,0 +1,36 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/sticky-elements.css")
+  style.
+    body{
+      padding: 0;
+    }
+    .ed-nav{
+      position: initial;
+    }
+
+block content
+  - var items = ["Sección 1", "Sección 2", "Sección 3"]
+  - var slugs = ["seccion-1", "seccion-2", "seccion-3"]
+  header.page__header
+    h1.mainTitle Hola mundo
+    ul.mainMenu#mainMenu
+      li.mainMenu__item: a.mainMenu__link(href="#") Inicio
+      for val, index in items
+        li.mainMenu__item: a.mainMenu__link(href="#" + slugs[index])= val
+
+  .main-container
+    main.page__main
+      for val, index in items
+        section.page__section(id=slugs[index])
+          h1.section__title= val
+          - var n = 0
+          while n < 3
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas feugiat dolor. Quisque eget eros quis neque egestas ultricies. Aliquam porttitor metus ut egestas consequat. Nullam vel dui in justo scelerisque egestas. Cras non facilisis justo. Nunc in faucibus risus. Pellentesque felis diam, condimentum vitae mattis ut, sollicitudin a libero. Pellentesque malesuada pharetra justo, nec fringilla tortor adipiscing at. Maecenas accumsan, enim id mattis blandit, urna enim bibendum est, at volutpat massa neque vitae libero. Phasellus cursus leo hendrerit neque consequat gravida.
+            - n++
+    aside.page__sidebar
+      .siguenos#siguenos Siguenos en Facebook
+
+block scripts
+  script(src="../dist/sticky-elements.js")

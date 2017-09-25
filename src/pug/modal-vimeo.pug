@@ -1,0 +1,15 @@
+extends ./layout.pug
+
+block styles
+  link(rel="stylesheet" href="../dist/css/components/modal.css")
+
+block content
+  h1 Vimeo modal
+  ul
+    li: a.vimeo-modal(href="https://vimeo.com/146110769") Video
+
+block scripts
+  script(src="../dist/modal.js")
+  script(src="../dist/vimeoModal.js")
+  script.
+    openVimeoModal('.vimeo-modal');

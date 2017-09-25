@@ -2,6 +2,7 @@ import babel from "gulp-babel";
 import gulp from "gulp";
 import postcss from "gulp-postcss";
 import sass from "gulp-sass";
+import pug from "gulp-pug";
 import browserSync from "browser-sync";
 import autoprefixer from "autoprefixer";
 
@@ -20,14 +21,22 @@ gulp.task('scripts', () => {
     .pipe(babel())
     .pipe(gulp.dest('./dist'))
 });
+gulp.task('html', () => {
+  gulp.src('./src/pug/*.pug')
+    .pipe(pug({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./examples'))
+});
 
-gulp.task('default', () => {
+gulp.task('default', ['html', 'styles', 'scripts'], () => {
   server.init({
     server: {
       baseDir: './'
     }
   });
-  gulp.watch(['./*.html', './src/*.js']).on('change',server.reload);
-  gulp.watch('./src/js/*.js', ['scripts']).on('change',server.reload);
+  gulp.watch(['./*.html', './src/*.js']).on('change', server.reload);
+  gulp.watch('./src/pug/*.pug', ['html']).on('change', server.reload);
+  gulp.watch('./src/js/*.js', ['scripts']).on('change', server.reload);
   gulp.watch('./src/scss/**/*.scss', ['styles']);
 });
