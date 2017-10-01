@@ -1,5 +1,7 @@
+import {createCustomElement} from "./helpers";
+
 // Crear e imprimir modal
-const printModal = content => {
+export const edModal = content => {
   const modalContentEl = createCustomElement('div', {
       id: "ed-modal-content",
       class: "ed-modal-content"

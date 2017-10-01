@@ -1,3 +1,5 @@
+import {edModal} from "./modal";
+
 // Obtener el código del video y los parámetros adicionales
 const getYoutTubeVideoCode = url => {
   let inicio = url.indexOf('?') + 3,
@@ -16,13 +18,13 @@ const createYouTubeModalContent = youTubeVideoCode =>
 
 
 // Eventos para abrir los modales en todos los links
-const openYouTubeModal = selector => {
+export const openYouTubeModal = selector => {
   let linksElements = [...document.querySelectorAll(selector)],
     links = linksElements.map(link => link.href);
   linksElements.forEach((el,i) => {
     el.addEventListener('click', e => {
       e.preventDefault();
-      printModal(createYouTubeModalContent(getYoutTubeVideoCode(links[i])));
+      edModal(createYouTubeModalContent(getYoutTubeVideoCode(links[i])));
     })
   })
 };

@@ -1,5 +1,5 @@
 // Crear elementos con atributos e hijo
-const createCustomElement = (element,attributes,children) => {
+export const createCustomElement = (element,attributes,children) => {
   let customElement = document.createElement(element);
   if (children !== undefined) children.forEach(el => {
     if (el.nodeType) {
@@ -13,14 +13,14 @@ const createCustomElement = (element,attributes,children) => {
 };
 
 // Añadir un objeto de atributos a un elemento
-const addAttributes = (element, attrObj) => {
+export const addAttributes = (element, attrObj) => {
   for (let attr in attrObj) {
     if (attrObj.hasOwnProperty(attr)) element.setAttribute(attr,attrObj[attr])
   }
 };
 
 // Envolver un elemento con otro
-const wrap = (selector, wrapElementType, attributesObj) => {
+export const wrap = (selector, wrapElementType, attributesObj) => {
   const element = getElement(selector),
         nextSibling = element.nextElementSibling,
         parent = element.parentElement,
@@ -34,14 +34,22 @@ const wrap = (selector, wrapElementType, attributesObj) => {
 };
 
 // Retornar un elemento del DOM (revisar)
-const getElement = elementOrSelector => {
-  const el = elementOrSelector.nodeType === 1
-    ? elementOrSelector
-    : document.querySelector(elementOrSelector)
-      ? document.querySelector(elementOrSelector)
-      : false;
-  if (el === false) console.error('Function getElement() requires a DOM element or a valid selector');
-  return el
+export const getElement = elementOrSelector => {
+  let e, g;
+  if (elementOrSelector.nodeType === 1) {
+    e = elementOrSelector;
+  } else {
+    g = document.querySelector(elementOrSelector);
+    if (document.querySelector(g)) {
+      e = document.querySelector(g)
+    } else {
+      e = document.createElement('div');
+      console.error(`Function getElement() requires a DOM element
+    or a valid selector. It has been created a placeholder element to avoid
+    execution errors, please fixed as soon as posible`);
+    }
+  }
+  return e;
 };
 
 

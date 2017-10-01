@@ -1,6 +1,4 @@
-const edui = {};
-
-edui.tabs = function() {
+export const edTabs = () => {
   let container = document.querySelector('.edui-tabs'),
     tabsContainer = container.querySelector('.tabs'),
     panelsContainer = container.querySelector('.panels'),
@@ -21,5 +19,3 @@ edui.tabs = function() {
     }
   })
 };
-
-edui.tabs();
