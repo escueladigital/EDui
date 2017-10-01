@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>My awesome title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="css/ed-ui.css">
+  </head>
+  <body>
+    <h1>Ventana modal</h1>
+    <p><a href="index.html">Volver al inicio</a></p>
+    <h2>Ejemplo</h2>
+    <button id="modal-button">Abrir modal</button>
+    <script src="js/ed-ui.js"></script>
+    <script>
+      document.getElementById('modal-button').addEventListener('click', () => {
+        edModal(`<h2>Bienvenidos a EDui</h2>`)
+      })
+    </script>
+  </body>
+</html>
