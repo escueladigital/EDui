@@ -1,0 +1,15 @@
+extends ../includes/template
+
+block main
+  h1 Ventana modal
+  p: a(href="index.html") Volver al inicio
+
+  h2 Ejemplo
+
+  button#modal-button Abrir modal
+
+block scripts
+  script.
+    document.getElementById('modal-button').addEventListener('click', () => {
+      edModal(`<h2>Bienvenidos a EDui</h2>`)
+    })

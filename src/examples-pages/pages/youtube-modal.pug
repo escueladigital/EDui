@@ -1,0 +1,20 @@
+extends ../includes/template
+block main
+  h1 Ventana modal de Youtube
+  p: a(href="index.html") Volver al inicio
+
+  h2 Ejemplos
+  
+  ul
+  li: a(href="https://www.youtube.com/watch?v=_AEBmN0qOfM&t=30m23s" class="modal-youtube")
+    | Taller sobre Adobe Xd
+  li: a(href="https://www.youtube.com/watch?v=iwQaUs9nYWU" class="modal-youtube")
+    | Taller de JavaScript Avanzado
+  li: a(href="https://www.youtube.com/watch?v=d-1-2_DWehE" class="modal-youtube")
+    | Taller de CSS Grid
+  li: a(href="https://www.youtube.com/watch?v=C37ClwKUf7Q&t=1161s" class="modal-youtube")
+    | PHP Avanzado con Laravel
+
+block scripts
+  script.
+    openYouTubeModal('.modal-youtube');
