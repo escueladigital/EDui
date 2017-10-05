@@ -1,3 +1,4 @@
+import { createCustomElement, addAttributes, wrap, getElement} from "./helpers";
 import {edModal} from "./modal";
 import {openVimeoModal} from "./vimeoModal";
 import {openYouTubeModal} from "./youtubeModal";
