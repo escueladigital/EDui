@@ -7,11 +7,9 @@ import {edTabs} from "./tabs";
 // No es la mejor forma pero funciona hasta encontrar un mejor modo
 // Idea sacada de http://www.mattburkedev.com/export-a-global-to-the-window-object-with-browserify/
 
-const eduiGlobal = true;
-
-if (eduiGlobal) {
+export const EDui = () => {
   window.edModal = edModal;
   window.openYouTubeModal = openYouTubeModal;
   window.openVimeoModal = openVimeoModal;
   window.edTabs = edTabs;
-}
+};
