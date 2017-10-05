@@ -12,4 +12,8 @@ export const EDui = () => {
   window.openYouTubeModal = openYouTubeModal;
   window.openVimeoModal = openVimeoModal;
   window.edTabs = edTabs;
+  window.addAttributes = addAttributes;
+  window.getElement = getElement;
+  window.createCustomElement = createCustomElement;
+  window.wrap = wrap;
 };
