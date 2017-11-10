@@ -1,0 +1,57 @@
+body {
+  font-family : sans-serif;
+}
+
+.ed-modal-container {
+  position   : fixed;
+  width      : 100%;
+  height     : 100%;
+  left       : 0;
+  top        : 0;
+  background : rgba(#000, .9);
+  display    : flex;
+
+  &::before,
+  &::after {
+    content          : "";
+    width            : 2rem;
+    height           : 2px;
+    background       : #FFF;
+    position         : absolute;
+    top              : 2rem;
+    transform        : rotate(45deg);
+    opacity          : .6;
+  }
+
+  &::before {
+    right : 1rem;
+  }
+
+  &::after {
+    right            : 1rem;
+    transform        : rotate(-45deg);
+  }
+}
+
+.ed-modal-content {
+  width     : 90%;
+  max-width : 1000px;
+  margin    : auto;
+  background : #FFF;
+}
+
+.video {
+  width          : 100%;
+  position       : relative;
+  height         : 0;
+  padding-bottom : 56.25%;
+  overflow       : hidden;
+
+  iframe {
+    width    : 100%;
+    position : absolute;
+    top      : 0;
+    left     : 0;
+    height   : 100%;
+  }
+}

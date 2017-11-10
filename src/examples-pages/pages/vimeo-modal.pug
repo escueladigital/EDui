@@ -1,0 +1,13 @@
+extends ../includes/template
+block main
+  h1 Ventana modal de Vimeo
+  p: a(href="index.html") Volver al inicio
+
+  h2 Ejemplos
+  ul
+  li: a(href="https://vimeo.com/4312930" class="modal-vimeo")
+    | TED talks
+
+block scripts
+  script.
+    openVimeoModal('.modal-vimeo');
